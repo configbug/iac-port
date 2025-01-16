@@ -4,12 +4,6 @@ resource "port_blueprint" "division" {
   icon       = "Division"
 
   properties = {
-    identifier = {
-      type     = "string"
-      title    = "Identifier"
-      required = true
-      unique   = true
-    }
     name = {
       type     = "string"
       title    = "Name"
@@ -46,12 +40,6 @@ resource "port_blueprint" "coe_tribe" {
   icon       = "Tribe"
 
   properties = {
-    identifier = {
-      type     = "string"
-      title    = "Identifier"
-      required = true
-      unique   = true
-    }
     type = {
       type     = "enum"
       title    = "Type"
@@ -102,12 +90,6 @@ resource "port_blueprint" "squad" {
   icon       = "Squad"
 
   properties = {
-    identifier = {
-      type     = "string"
-      title    = "Identifier"
-      required = true
-      unique   = true
-    }
     name = {
       type     = "string"
       title    = "Name"
@@ -152,12 +134,6 @@ resource "port_blueprint" "specialty" {
   icon       = "Specialty"
 
   properties = {
-    identifier = {
-      type     = "string"
-      title    = "Identifier"
-      required = true
-      unique   = true
-    }
     name = {
       type     = "string"
       title    = "Name"
@@ -220,12 +196,6 @@ resource "port_blueprint" "engineers" {
   icon       = "Engineer"
 
   properties = {
-    identifier = {
-      type     = "string"
-      title    = "Identifier"
-      required = true
-      unique   = true
-    }
     enrollment = {
       type     = "string"
       title    = "Enrollment"
