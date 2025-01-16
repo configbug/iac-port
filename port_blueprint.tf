@@ -1,8 +1,6 @@
 resource "port_blueprint" "division" {
   identifier = "division"
   title      = "Division"
-  icon       = "Division"
-
   properties = {
     string_props = {
       name = {
@@ -31,14 +29,15 @@ resource "port_blueprint" "division" {
     }
     array_props = {
       status = {
-        required     = true
-        title        = "Status"
-        string_items = {}
+        required = true
+        title    = "Status"
+        string_items = {
+          default = ["Active"]
+        }
       }
     }
   }
 }
-
 
 resource "port_blueprint" "coe_tribe" {
   identifier = "coe_tribe"
@@ -84,7 +83,6 @@ resource "port_blueprint" "coe_tribe" {
       }
     }
   }
-
   relations = {
     belongs_to_division = {
       title    = "Belongs to Division"
@@ -99,7 +97,6 @@ resource "port_blueprint" "squad" {
   identifier = "squad"
   title      = "Squad"
   icon       = "Squad"
-
   properties = {
     string_props = {
       name = {
@@ -134,7 +131,6 @@ resource "port_blueprint" "squad" {
       }
     }
   }
-
   relations = {
     belongs_to_coe_tribe = {
       title    = "Belongs to COE/Tribe"
@@ -149,7 +145,6 @@ resource "port_blueprint" "specialty" {
   identifier = "specialty"
   title      = "Specialty"
   icon       = "Specialty"
-
   properties = {
     string_props = {
       name = {
@@ -172,12 +167,10 @@ resource "port_blueprint" "specialty" {
   }
 }
 
-
 resource "port_blueprint" "role" {
   identifier = "role"
   title      = "Role"
   icon       = "Role"
-
   properties = {
     string_props = {
       identifier = {
@@ -211,7 +204,6 @@ resource "port_blueprint" "engineers" {
   identifier = "engineers"
   title      = "Engineers"
   icon       = "Engineer"
-
   properties = {
     string_props = {
       enrollment = {
