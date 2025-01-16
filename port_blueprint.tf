@@ -79,7 +79,9 @@ resource "port_blueprint" "coe_tribe" {
       status = {
         required     = true
         title        = "Status"
-        string_items = {}
+        string_items = {
+          default = ["Active"]
+        }
       }
     }
   }
@@ -127,7 +129,9 @@ resource "port_blueprint" "squad" {
       status = {
         required     = true
         title        = "Status"
-        string_items = {}
+        string_items = {
+          default = ["Active"]
+        }
       }
     }
   }
@@ -161,7 +165,9 @@ resource "port_blueprint" "specialty" {
       status = {
         required     = true
         title        = "Status"
-        string_items = {}
+        string_items = {
+          default = ["Active"]
+        }
       }
     }
   }
@@ -193,7 +199,9 @@ resource "port_blueprint" "role" {
       status = {
         required     = true
         title        = "Status"
-        string_items = {}
+        string_items = {
+          default = ["Active"]
+        }
       }
     }
   }
@@ -236,7 +244,9 @@ resource "port_blueprint" "engineers" {
       status = {
         required     = true
         title        = "Status"
-        string_items = {}
+        string_items = {
+          default = ["Active"]
+        }
       }
     }
   }
