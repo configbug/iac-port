@@ -115,6 +115,119 @@
 #   depends_on            = [port_blueprint.environments]
 # }
 
+# resource "port_blueprint" "port_workload" {
+#   identifier  = "workload"
+#   title       = "Workload"
+#   description = "This blueprint represents a k8s Workload. This includes all k8s objects which can create pods (deployments[replicasets], daemonsets, statefulsets...)"
+#   icon        = "Deployment"
+#   mirror_properties = {
+#     "Cluster" = {
+#       path  = "Namespace.Cluster.$title"
+#       title = "Cluster"
+#     },
+#     "namespace" = {
+#       path  = "Namespace.$title"
+#       title = "Namespace"
+#     },
+#   }
+#   properties = {
+#     array_props = {
+#       "containers" = {
+#         description = "The containers for each pod instance of the Workload"
+#         required    = false
+#         title       = "Containers"
+#       },
+#       "images" = {
+#         required = false
+#         title    = "Images"
+#       },
+#     }
+#     boolean_props = {
+#       "hasLatest" = {
+#         description = "Has Container with 'latest' as image tag"
+#         required    = false
+#         title       = "Has 'latest' tag"
+#       },
+#       "hasLimits" = {
+#         required = false
+#         title    = "All containers have limits"
+#       },
+#       "hasPrivileged" = {
+#         required = false
+#         title    = "Has Privileged Container"
+#       },
+#     }
+#     number_props = {
+#       "availableReplicas" = {
+#         description = "Current running replica count"
+#         required    = false
+#         title       = "Running Replicas"
+#       },
+#       "replicas" = {
+#         description = "Wanted replica count"
+#         required    = false
+#         title       = "Wanted Replicas"
+#       },
+#     }
+#     object_props = {
+#       "labels" = {
+#         description = "Labels of the Workload"
+#         required    = false
+#         title       = "Labels"
+#       },
+#       "strategyConfig" = {
+#         description = "The workloads rollout strategy"
+#         required    = false
+#         title       = "Strategy Config"
+#       },
+#     }
+#     string_props = {
+#       "creationTimestamp" = {
+#         description = "When the Workload was created"
+#         format      = "date-time"
+#         required    = false
+#         title       = "Created"
+#       },
+#       "isHealthy" = {
+#         enum = [
+#           "Healthy",
+#           "Unhealthy",
+#         ]
+#         enum_colors = {
+#           "Healthy"   = "green"
+#           "Unhealthy" = "red"
+#         }
+#         required = false
+#         title    = "Workload Health"
+#       },
+#       "kind" = {
+#         description = "The kind of Workload"
+#         enum = [
+#           "StatefulSet",
+#           "DaemonSet",
+#           "Deployment",
+#           "Rollout",
+#         ]
+#         required = false
+#         title    = "Workload Kind"
+#       },
+#       "strategy" = {
+#         description = "Rollout Strategy"
+#         required    = false
+#         title       = "Strategy"
+#       },
+#     }
+#   }
+#   relations = {
+#     "Namespace" = {
+#       many     = false
+#       required = false
+#       target   = "namespace"
+#       title    = "Namespace"
+#     },
+#   }
+# }
+
 # resource "port_blueprint" "GitHub_Repositories" {
 #   title                 = "Service"
 #   icon                  = "Github"
@@ -166,3 +279,4 @@
 #     }
 #   }
 # }
+
