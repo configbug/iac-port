@@ -4,31 +4,47 @@ resource "port_blueprint" "division" {
   icon       = "Division"
 
   properties = {
-    name = {
-      type     = "string"
-      title    = "Name"
-      required = true
+    string_props = {
+      name = {
+        type     = "string"
+        title    = "Name"
+        required = true
+      }
+      alias = {
+        type  = "string"
+        title = "Alias"
+      }
+      name_leader = {
+        type  = "string"
+        title = "Name Leader"
+      }
+      description = {
+        type  = "string"
+        title = "Description"
+      }
+      creation_date = {
+        title       = "Creation Date"
+        required    = true
+        format      = "date-time"
+        description = "When the Division was created"
+      }
+      status = {
+        enum = [
+          "Active",
+          "Inactive",
+        ]
+        required = true
+        title    = "Status"
+      }
     }
-    alias = {
-      type  = "string"
-      title = "Alias"
-    }
-    name_leader = {
-      type  = "string"
-      title = "Name Leader"
-    }
-    description = {
-      type  = "string"
-      title = "Description"
-    }
-    creation_date = {
-      type  = "date"
-      title = "Creation Date"
-    }
-    status = {
-      type  = "enum"
-      title = "Status"
-      enum  = ["Active", "Inactive"]
+    array_props = {
+      status = {
+        required = true
+        string_items = {
+          default = ["Active"]
+        }
+        title = "Status"
+      }
     }
   }
 }
@@ -40,37 +56,52 @@ resource "port_blueprint" "coe_tribe" {
   icon       = "Tribe"
 
   properties = {
-    type = {
-      type     = "enum"
-      title    = "Type"
-      enum     = ["COE", "Tribe"]
-      required = true
+    string_props = {
+      type = {
+        title    = "Type"
+        enum     = ["COE", "Tribe"]
+        required = true
+      }
+      name = {
+        type     = "string"
+        title    = "Name"
+        required = true
+      }
+      alias = {
+        type  = "string"
+        title = "Alias"
+      }
+      description = {
+        type  = "string"
+        title = "Description"
+      }
+      name_leader = {
+        type  = "string"
+        title = "Name Leader"
+      }
+      creation_date = {
+        title       = "Creation Date"
+        required    = true
+        format      = "date-time"
+        description = "When the COE/Tribe was created"
+      }
+      status = {
+        enum = [
+          "Active",
+          "Inactive",
+        ]
+        required = true
+        title    = "Status"
+      }
     }
-    name = {
-      type     = "string"
-      title    = "Name"
-      required = true
-    }
-    alias = {
-      type  = "string"
-      title = "Alias"
-    }
-    description = {
-      type  = "string"
-      title = "Description"
-    }
-    name_leader = {
-      type  = "string"
-      title = "Name Leader"
-    }
-    creation_date = {
-      type  = "date"
-      title = "Creation Date"
-    }
-    status = {
-      type  = "enum"
-      title = "Status"
-      enum  = ["Active", "Inactive"]
+    array_props = {
+      status = {
+        required = true
+        string_items = {
+          default = ["Active"]
+        }
+        title = "Status"
+      }
     }
   }
 
@@ -90,31 +121,47 @@ resource "port_blueprint" "squad" {
   icon       = "Squad"
 
   properties = {
-    name = {
-      type     = "string"
-      title    = "Name"
-      required = true
+    string_props = {
+      name = {
+        type     = "string"
+        title    = "Name"
+        required = true
+      }
+      alias = {
+        type  = "string"
+        title = "Alias"
+      }
+      description = {
+        type  = "string"
+        title = "Description"
+      }
+      name_leader = {
+        type  = "string"
+        title = "Name Leader"
+      }
+      creation_date = {
+        title       = "Creation Date"
+        required    = true
+        format      = "date-time"
+        description = "When the Squad was created"
+      }
+      status = {
+        enum = [
+          "Active",
+          "Inactive",
+        ]
+        required = true
+        title    = "Status"
+      }
     }
-    alias = {
-      type  = "string"
-      title = "Alias"
-    }
-    description = {
-      type  = "string"
-      title = "Description"
-    }
-    name_leader = {
-      type  = "string"
-      title = "Name Leader"
-    }
-    creation_date = {
-      type  = "date"
-      title = "Creation Date"
-    }
-    status = {
-      type  = "enum"
-      title = "Status"
-      enum  = ["Active", "Inactive"]
+    array_props = {
+      status = {
+        required = true
+        string_items = {
+          default = ["Active"]
+        }
+        title = "Status"
+      }
     }
   }
 
@@ -134,23 +181,33 @@ resource "port_blueprint" "specialty" {
   icon       = "Specialty"
 
   properties = {
-    name = {
-      type     = "string"
-      title    = "Name"
-      required = true
+    string_props = {
+      name = {
+        type     = "string"
+        title    = "Name"
+        required = true
+      }
+      description = {
+        type  = "string"
+        title = "Description"
+      }
+      status = {
+        enum = [
+          "Active",
+          "Inactive",
+        ]
+        required = true
+        title    = "Status"
+      }
     }
-    description = {
-      type  = "string"
-      title = "Description"
-    }
-    creation_date = {
-      type  = "date"
-      title = "Creation Date"
-    }
-    status = {
-      type  = "enum"
-      title = "Status"
-      enum  = ["Active", "Inactive"]
+    array_props = {
+      status = {
+        required = true
+        string_items = {
+          default = ["Active"]
+        }
+        title = "Status"
+      }
     }
   }
 }
@@ -162,29 +219,39 @@ resource "port_blueprint" "role" {
   icon       = "Role"
 
   properties = {
-    identifier = {
-      type     = "string"
-      title    = "Identifier"
-      required = true
-      unique   = true
+    string_props = {
+      identifier = {
+        type     = "string"
+        title    = "Identifier"
+        required = true
+        unique   = true
+      }
+      name = {
+        type     = "string"
+        title    = "Name"
+        required = true
+      }
+      description = {
+        type  = "string"
+        title = "Description"
+      }
+      status = {
+        enum = [
+          "Active",
+          "Inactive",
+        ]
+        required = true
+        title    = "Status"
+      }
     }
-    name = {
-      type     = "string"
-      title    = "Name"
-      required = true
-    }
-    description = {
-      type  = "string"
-      title = "Description"
-    }
-    creation_date = {
-      type  = "date"
-      title = "Creation Date"
-    }
-    status = {
-      type  = "enum"
-      title = "Status"
-      enum  = ["Active", "Inactive"]
+    array_props = {
+      status = {
+        required = true
+        string_items = {
+          default = ["Active"]
+        }
+        title = "Status"
+      }
     }
   }
 }
@@ -196,37 +263,51 @@ resource "port_blueprint" "engineers" {
   icon       = "Engineer"
 
   properties = {
-    enrollment = {
-      type     = "string"
-      title    = "Enrollment"
-      required = true
+    string_props = {
+      enrollment = {
+        type     = "string"
+        title    = "Enrollment"
+        required = true
+      }
+      email = {
+        type   = "string"
+        title  = "Email"
+        format = "email"
+      }
+      full_name = {
+        type     = "string"
+        title    = "Full Name"
+        required = true
+      }
+      type = {
+        title = "Type"
+        enum  = ["Full-time", "Part-time", "Contractor"]
+      }
+      admission_date = {
+        title       = "Creation Date"
+        required    = true
+        format      = "date-time"
+        description = "When the Engineer was admitted"
+      }
+      status = {
+        enum = [
+          "Active",
+          "Inactive",
+        ]
+        required = true
+        title    = "Status"
+      }
     }
-    email = {
-      type   = "string"
-      title  = "Email"
-      format = "email"
-    }
-    full_name = {
-      type     = "string"
-      title    = "Full Name"
-      required = true
-    }
-    type = {
-      type  = "enum"
-      title = "Type"
-      enum  = ["Full-time", "Part-time", "Contractor"]
-    }
-    creation_date = {
-      type  = "date"
-      title = "Creation Date"
-    }
-    status = {
-      type  = "enum"
-      title = "Status"
-      enum  = ["Active", "Inactive"]
+    array_props = {
+      status = {
+        required = true
+        string_items = {
+          default = ["Active"]
+        }
+        title = "Status"
+      }
     }
   }
-
   relations = {
     belongs_to_role = {
       title  = "Belongs to Role"
