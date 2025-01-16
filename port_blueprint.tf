@@ -28,22 +28,12 @@ resource "port_blueprint" "division" {
         format      = "date-time"
         description = "When the Division was created"
       }
-      status = {
-        enum = [
-          "Active",
-          "Inactive",
-        ]
-        required = true
-        title    = "Status"
-      }
     }
     array_props = {
       status = {
-        required = true
-        string_items = {
-          default = ["Active"]
-        }
-        title = "Status"
+        required     = true
+        title        = "Status"
+        string_items = {}
       }
     }
   }
@@ -85,22 +75,12 @@ resource "port_blueprint" "coe_tribe" {
         format      = "date-time"
         description = "When the COE/Tribe was created"
       }
-      status = {
-        enum = [
-          "Active",
-          "Inactive",
-        ]
-        required = true
-        title    = "Status"
-      }
     }
     array_props = {
       status = {
-        required = true
-        string_items = {
-          default = ["Active"]
-        }
-        title = "Status"
+        required     = true
+        title        = "Status"
+        string_items = {}
       }
     }
   }
@@ -145,22 +125,12 @@ resource "port_blueprint" "squad" {
         format      = "date-time"
         description = "When the Squad was created"
       }
-      status = {
-        enum = [
-          "Active",
-          "Inactive",
-        ]
-        required = true
-        title    = "Status"
-      }
     }
     array_props = {
       status = {
-        required = true
-        string_items = {
-          default = ["Active"]
-        }
-        title = "Status"
+        required     = true
+        title        = "Status"
+        string_items = {}
       }
     }
   }
@@ -191,22 +161,12 @@ resource "port_blueprint" "specialty" {
         type  = "string"
         title = "Description"
       }
-      status = {
-        enum = [
-          "Active",
-          "Inactive",
-        ]
-        required = true
-        title    = "Status"
-      }
     }
     array_props = {
       status = {
-        required = true
-        string_items = {
-          default = ["Active"]
-        }
-        title = "Status"
+        required     = true
+        title        = "Status"
+        string_items = {}
       }
     }
   }
@@ -235,22 +195,12 @@ resource "port_blueprint" "role" {
         type  = "string"
         title = "Description"
       }
-      status = {
-        enum = [
-          "Active",
-          "Inactive",
-        ]
-        required = true
-        title    = "Status"
-      }
     }
     array_props = {
       status = {
-        required = true
-        string_items = {
-          default = ["Active"]
-        }
-        title = "Status"
+        required     = true
+        title        = "Status"
+        string_items = {}
       }
     }
   }
@@ -289,22 +239,12 @@ resource "port_blueprint" "engineers" {
         format      = "date-time"
         description = "When the Engineer was admitted"
       }
-      status = {
-        enum = [
-          "Active",
-          "Inactive",
-        ]
-        required = true
-        title    = "Status"
-      }
     }
     array_props = {
       status = {
-        required = true
-        string_items = {
-          default = ["Active"]
-        }
-        title = "Status"
+        required     = true
+        title        = "Status"
+        string_items = {}
       }
     }
   }
