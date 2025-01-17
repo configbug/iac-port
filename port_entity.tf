@@ -10,7 +10,7 @@ resource "port_entity" "roles" {
       }
     }
     string_props = {
-      "description" = "Líder Técnico"
+      "description" = "Líder Tecnico"
       "name"        = "Tech Lead"
     }
   }
