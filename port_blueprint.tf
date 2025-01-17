@@ -4,7 +4,6 @@ resource "port_blueprint" "division" {
   properties = {
     string_props = {
       name = {
-        type     = "string"
         title    = "Name"
         required = true
       }
@@ -52,7 +51,6 @@ resource "port_blueprint" "coe_tribe" {
         required = true
       }
       name = {
-        type     = "string"
         title    = "Name"
         required = true
       }
@@ -77,8 +75,8 @@ resource "port_blueprint" "coe_tribe" {
     }
     array_props = {
       status = {
-        required     = true
-        title        = "Status"
+        required = true
+        title    = "Status"
         string_items = {
           default = ["Active"]
         }
@@ -102,7 +100,6 @@ resource "port_blueprint" "squad" {
   properties = {
     string_props = {
       name = {
-        type     = "string"
         title    = "Name"
         required = true
       }
@@ -127,8 +124,8 @@ resource "port_blueprint" "squad" {
     }
     array_props = {
       status = {
-        required     = true
-        title        = "Status"
+        required = true
+        title    = "Status"
         string_items = {
           default = ["Active"]
         }
@@ -148,11 +145,9 @@ resource "port_blueprint" "squad" {
 resource "port_blueprint" "specialty" {
   identifier = "specialty"
   title      = "Specialty"
-  icon       = "Specialty"
   properties = {
     string_props = {
       name = {
-        type     = "string"
         title    = "Name"
         required = true
       }
@@ -163,8 +158,8 @@ resource "port_blueprint" "specialty" {
     }
     array_props = {
       status = {
-        required     = true
-        title        = "Status"
+        required = true
+        title    = "Status"
         string_items = {
           default = ["Active"]
         }
@@ -179,26 +174,19 @@ resource "port_blueprint" "role" {
   icon       = "Role"
   properties = {
     string_props = {
-      identifier = {
-        type     = "string"
-        title    = "Identifier"
-        required = true
-        unique   = true
-      }
       name = {
-        type     = "string"
         title    = "Name"
         required = true
       }
       description = {
-        type  = "string"
-        title = "Description"
+        title    = "Description"
+        required = false
       }
     }
     array_props = {
       status = {
-        required     = true
-        title        = "Status"
+        required = true
+        title    = "Status"
         string_items = {
           default = ["Active"]
         }
@@ -214,27 +202,25 @@ resource "port_blueprint" "engineers" {
   icon       = "Engineer"
   properties = {
     string_props = {
-      enrollment = {
-        type     = "string"
-        title    = "Enrollment"
-        required = true
-      }
       email = {
-        type   = "string"
         title  = "Email"
         format = "email"
       }
       full_name = {
-        type     = "string"
         title    = "Full Name"
         required = true
       }
       type = {
-        title = "Type"
-        enum  = ["Full-time", "Part-time", "Contractor"]
+        title   = "Type"
+        enum    = ["Organic", "Provider"]
+        default = "Organic"
+      }
+      company = {
+        title   = "Company"
+        default = "Configbug Asociados E.I.R.L."
       }
       admission_date = {
-        title       = "Creation Date"
+        title       = "Admission Date"
         required    = true
         format      = "date-time"
         description = "When the Engineer was admitted"
@@ -242,8 +228,8 @@ resource "port_blueprint" "engineers" {
     }
     array_props = {
       status = {
-        required     = true
-        title        = "Status"
+        required = true
+        title    = "Status"
         string_items = {
           default = ["Active"]
         }
