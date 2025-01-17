@@ -1,6 +1,6 @@
 resource "port_blueprint" "division" {
   identifier = "division"
-  title      = "Division"
+  title      = "División"
   properties = {
     string_props = {
       name = {
