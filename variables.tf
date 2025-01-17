@@ -2,7 +2,7 @@ variable "port_client_id" {
   # default     = "value"
   description = "The client ID for the Port API"
   type        = string
-  sensitive   = false
+  sensitive   = true
 }
 
 variable "port_client_secret" {
@@ -11,8 +11,3 @@ variable "port_client_secret" {
   type        = string
   sensitive   = true
 }
-
-# variable "subscription_id" {
-#   description = "Azure Subscription ID"
-#   type        = string
-# }
