@@ -26,10 +26,16 @@ resource "port_blueprint" "division" {
         format      = "date-time"
         description = "When the Division was created"
       }
+    }
+    array_props = {
       status = {
-        title   = "Status"
-        enum    = ["Active", "Inactive"]
-        default = "Active"
+        required = true
+        string_items = {
+          default = [
+            "Active",
+          ]
+        }
+        title = "Status"
       }
     }
   }
@@ -70,10 +76,16 @@ resource "port_blueprint" "coe_tribe" {
         format      = "date-time"
         description = "When the COE/Tribe was created"
       }
+    }
+    array_props = {
       status = {
-        title   = "Status"
-        enum    = ["Active", "Inactive"]
-        default = "Active"
+        required = true
+        string_items = {
+          default = [
+            "Active",
+          ]
+        }
+        title = "Status"
       }
     }
   }
@@ -116,10 +128,16 @@ resource "port_blueprint" "squad" {
         format      = "date-time"
         description = "When the Squad was created"
       }
+    }
+    array_props = {
       status = {
-        title   = "Status"
-        enum    = ["Active", "Inactive"]
-        default = "Active"
+        required = true
+        string_items = {
+          default = [
+            "Active",
+          ]
+        }
+        title = "Status"
       }
     }
   }
@@ -147,10 +165,16 @@ resource "port_blueprint" "specialty" {
         type  = "string"
         title = "Description"
       }
+    }
+    array_props = {
       status = {
-        title   = "Status"
-        enum    = ["Active", "Inactive"]
-        default = "Active"
+        required = true
+        string_items = {
+          default = [
+            "Active",
+          ]
+        }
+        title = "Status"
       }
     }
   }
@@ -171,10 +195,16 @@ resource "port_blueprint" "role" {
         title    = "Description"
         required = false
       }
+    }
+    array_props = {
       status = {
-        title   = "Status"
-        enum    = ["Active", "Inactive"]
-        default = "Active"
+        required = true
+        string_items = {
+          default = [
+            "Active",
+          ]
+        }
+        title = "Status"
       }
     }
   }
@@ -211,10 +241,16 @@ resource "port_blueprint" "engineers" {
         format      = "date-time"
         description = "When the Engineer was admitted"
       }
+    }
+    array_props = {
       status = {
-        title   = "Status"
-        enum    = ["Active", "Inactive"]
-        default = "Active"
+        required = true
+        string_items = {
+          default = [
+            "Active",
+          ]
+        }
+        title = "Status"
       }
     }
   }
