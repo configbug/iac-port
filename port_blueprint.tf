@@ -1,6 +1,7 @@
 resource "port_blueprint" "division" {
   identifier = "division"
   title      = "División"
+  force_delete_entities = true
   properties = {
     string_props = {
       name = {
@@ -37,6 +38,7 @@ resource "port_blueprint" "division" {
 resource "port_blueprint" "coe_tribe" {
   identifier = "coe_tribe"
   title      = "COE/Tribe"
+  force_delete_entities = true
   icon       = "Tribe"
 
   properties = {
@@ -88,6 +90,7 @@ resource "port_blueprint" "coe_tribe" {
 resource "port_blueprint" "squad" {
   identifier = "squad"
   title      = "Squad"
+  force_delete_entities = true
   icon       = "Squad"
   properties = {
     string_props = {
@@ -133,6 +136,7 @@ resource "port_blueprint" "squad" {
 resource "port_blueprint" "specialty" {
   identifier = "specialty"
   title      = "Specialty"
+  force_delete_entities = true
   properties = {
     string_props = {
       name = {
@@ -155,6 +159,7 @@ resource "port_blueprint" "specialty" {
 resource "port_blueprint" "role" {
   identifier = "role"
   title      = "Role"
+  force_delete_entities = true
   icon       = "Role"
   properties = {
     string_props = {
@@ -179,6 +184,7 @@ resource "port_blueprint" "role" {
 resource "port_blueprint" "engineers" {
   identifier = "engineers"
   title      = "Engineers"
+  force_delete_entities = true
   icon       = "Engineer"
   properties = {
     string_props = {
