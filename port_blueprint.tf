@@ -180,35 +180,34 @@
 #   }
 # }
 
-# resource "port_blueprint" "role" {
-#   identifier            = "role"
-#   title                 = "Role"
-#   force_delete_entities = true
-#   icon                  = "Role"
-#   properties = {
-#     string_props = {
-#       name = {
-#         title    = "Name"
-#         required = true
-#       }
-#       description = {
-#         title    = "Description"
-#         required = false
-#       }
-#     }
-#     array_props = {
-#       status = {
-#         required = true
-#         string_items = {
-#           default = [
-#             "Active",
-#           ]
-#         }
-#         title = "Status"
-#       }
-#     }
-#   }
-# }
+resource "port_blueprint" "role" {
+  identifier            = "role"
+  title                 = "Role"
+  icon                  = "Role"
+  properties = {
+    string_props = {
+      name = {
+        title    = "Name"
+        required = true
+      }
+      description = {
+        title    = "Description"
+        required = false
+      }
+    }
+    array_props = {
+      status = {
+        required = true
+        string_items = {
+          default = [
+            "Active",
+          ]
+        }
+        title = "Status"
+      }
+    }
+  }
+}
 
 
 # resource "port_blueprint" "engineers" {
